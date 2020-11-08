@@ -1,0 +1,10 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "Gaga" %></h1>
+  <p>Simple remote planning poker.</p>
+
+  <%= if @current_user do %>
+    <%#= render GagaWeb.GameView, "_form.html", assigns %>
+  <% else %>
+    <%= render GagaWeb.SessionView, "_form.html", assigns %>
+  <% end %>
+</section>

@@ -1,0 +1,11 @@
+<%= form_for @conn, Routes.session_path(@conn, :create), [as: :user], fn f -> %>
+  <%= if assigns[:error_message] != nil do %>
+    <div class="alert alert-danger">
+      <p><%= @error_message %></p>
+    </div>
+  <% end %>
+
+  <%= text_input f, :name, required: true, autofocus: true, placeholder: "Please enter your name" %>
+
+  <%= submit "Continue" %>
+<% end %>
