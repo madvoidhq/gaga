@@ -1,19 +1,59 @@
 # Gaga
 
-To start your Phoenix server:
+Gaga is an online simple planning poker app built in [Elixir][urls.elixir],
+using [Phoenix][urls.phoenix] and [LiveView][urls.live-view].
 
-  * Install dependencies with `mix deps.get`
-  * Install Node.js dependencies with `npm install` inside the `assets` directory
-  * Start Phoenix endpoint with `mix phx.server`
+It's free, open source, and doesn't require signing up nor store any data about
+you or your team (it doesn't even have a DB).
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+![Screenshot](gaga.png)
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+You can try it live on https://gaga.labvoid.com.
 
-## Learn more
+## ❓ Why?
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+Most of us are working from home due to the coronavirus outbreak.
+
+While many tools already exist to keep us connected through video conferencing,
+we also needed a simple collaborative app that makes it easy to estimate and
+plan iterations while working remotely.
+
+As it might help other teams and doesn't consume many resources, we decided to
+make it available for everyone.
+
+## 🤝 Contributing
+
+Whether you're helping us fix bugs, improve the docs, or spread the word, we'd
+love to have you as part of the community!
+
+Check out our [Contributing Guide](./CONTRIBUTING.md) for ideas on contributing
+and setup steps for getting the repository up and running on your local machine.
+
+## ❗ Code of Conduct
+
+We are dedicated to building a welcoming, diverse, safe community. We expect
+everyone participating in the project to abide by our Code of Conduct. Please
+read it. Please follow it.
+
+## 👩‍💻 Development
+
+* [**Setup**](./CONTRIBUTING.md#setup)
+* [**Getting started**](./CONTRIBUTING.md#getting-started)
+
+## 📝 License
+
+This project is licensed under the [MIT License](./LICENSE).
+
+## Note
+
+We made this app in half a day, so it may still have some rough edges 😅.
+
+---
+
+<p align="center">
+  Developed with ❤️ by <strong><a href="https://madvoid.com">Madvoid</a></strong>.
+</p>
+
+[urls.elixir]: https://elixir-lang.org/
+[urls.phoenix]: https://www.phoenixframework.org/
+[urls.live-view]: https://github.com/phoenixframework/phoenix_live_view
