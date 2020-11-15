@@ -2,6 +2,7 @@ defmodule GagaWeb.Router do
   use GagaWeb, :router
 
   import GagaWeb.UserAuth
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -21,6 +22,12 @@ defmodule GagaWeb.Router do
 
     get "/", PageController, :index
     resources "/session", SessionController, only: [:new, :create, :delete], singleton: true
+  end
+
+  scope "/", GagaWeb do
+    pipe_through [:browser, :require_authenticated_user]
+
+    resources "/games", GameController, only: [:create, :show]
   end
 
   # Other scopes may use custom stacks.

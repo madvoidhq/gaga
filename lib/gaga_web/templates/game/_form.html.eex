@@ -1,0 +1,3 @@
+<%= form_for @conn, Routes.game_path(@conn, :create), [as: :game], fn _f -> %>
+  <%= submit "Start a game", class: "btn btn-primary" %>
+<% end %>

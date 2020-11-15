@@ -12,7 +12,9 @@ defmodule Gaga.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Gaga.PubSub},
       # Start the Endpoint (http/https)
-      GagaWeb.Endpoint
+      GagaWeb.Endpoint,
+      # Start the Presence system
+      GagaWeb.Presence
       # Start a worker by calling: Gaga.Worker.start_link(arg)
       # {Gaga.Worker, arg}
     ]

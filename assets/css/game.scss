@@ -1,0 +1,140 @@
+.game {
+  margin-bottom: 3rem;
+}
+
+.game-name {
+  // position: relative;
+  display: inline-block;
+
+  padding: 0 5px;
+
+  color: #274466;
+  background-color: #eff7ff;
+  border-radius: 3px;
+
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  white-space: nowrap;
+}
+
+.deck {
+  display: flex;
+  align-items: center;
+
+  flex-direction: row;
+
+  flex-wrap: wrap;
+  justify-self: center;
+
+  .card {
+    width: calc(33% - 8px);
+    margin: 4px;
+  }
+}
+
+.deck-actions {
+  display: flex;
+  align-items: center;
+
+  margin-top: 8px;
+  margin-bottom: 3rem;
+
+  flex-direction: row;
+
+  flex-wrap: wrap;
+  justify-self: center;
+
+  .button {
+    width: calc(50% - 8px);
+    margin: 4px;
+  }
+}
+
+.votes-details,
+.votes-summary {
+  padding: 16px;
+
+  background-color: #f4f5f7;
+}
+
+.players {
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+  .player-status {
+    display: flex;
+    align-items: center;
+
+    padding: 8px 12px;
+
+    border-top: 1px solid #e5e7eb;
+
+    flex-direction: row;
+
+    justify-self: center;
+
+    &:first-child {
+      border-top-width: 0;
+    }
+
+    .vote-status {
+      display: inline-block;
+
+      width: 8px;
+      height: 8px;
+      margin-right: 8px;
+
+      background-color: #bbb;
+      border-radius: 50%;
+
+      &.red {
+        background-color: #f98080;
+      }
+
+      &.green {
+        background-color: #31c48d;
+      }
+    }
+
+    .username {
+      flex: 1;
+    }
+
+    .vote {
+      margin-left: 8px;
+    }
+  }
+}
+
+.votes-summary {
+  display: grid;
+
+  border-top: 1px solid #e5e7eb;
+
+  gap: 16px;
+  grid-gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  .stat {
+    padding: 8px;
+    margin: 0;
+
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+    &-name {
+      color: #6b7280;
+
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    &-value {
+      margin: 0;
+
+      font-style: 30px;
+      font-weight: 600;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+<section class="game">
+  <h1>
+    Game
+  </h1>
+
+  <p>
+    Share this link:
+    <span class="game-name">
+      <a href="/games/<%= @game_name %>"><%= @game_name %></a>
+    </span>
+  </p>
+
+  <div class="row">
+    <div class="column">
+      <label class="label">Your vote:</label>
+      <div class="deck">
+        <%= for card <- deck() do %>
+          <a
+            class="card button <%= if @current_vote == card do %>button-outline<% end %>"
+            phx-click="vote"
+            phx-value-vote="<%= card %>">
+            <strong><%= card %></strong>
+          </a>
+        <% end %>
+      </div>
+      <div class="deck-actions">
+        <a class="button" phx-click="new_round">
+          New Round
+        </a>
+        <a class="button" phx-click="flip_cards" <%= display_votes?(assigns) && "disabled" %>>
+          Flip cards
+        </a>
+      </div>
+    </div>
+
+    <div class="column">
+      <label class="label">Votes (<%= votes_count(@votes) %>)</label>
+      <div class="votes-details">
+        <div class="players">
+          <%= for player <- @players do %>
+            <div class="player-status">
+              <span class="vote-status <%= vote_class(player.vote) %>"></span>
+              <span class="username"><%= player.name %></span>
+              <%= if display_votes?(assigns) do %>
+                <span class="vote">
+                  <%= "#{player.vote}" %>
+                </span>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <%= if display_votes?(assigns) do %>
+        <div class="votes-summary">
+          <%= for {key, val} <- stats(@votes) do %>
+            <dl class="stat">
+              <dt class="stat-name"><%= "#{key}" %></dt>
+              <dd class="stat-value"><%= "#{val}" %></dd>
+            </dl>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
