@@ -1,6 +1,6 @@
 <section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Gaga" %></h1>
-  <p>Simple remote planning poker.</p>
+  <h1><%= gettext "Welcome to %{name}!", name: GagaWeb.SEO.site_name %></h1>
+  <p>Simple planning poker for remote teams.</p>
 
   <%= if @current_user do %>
     <%= render GagaWeb.GameView, "_form.html", assigns %>

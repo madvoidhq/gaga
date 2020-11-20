@@ -1,0 +1,23 @@
+<link rel="shortcut icon" href="/favicon.ico" />
+
+<%# iOS devices & compatible clients %>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+<%# General tags %>
+<meta name="description" content="<%= GagaWeb.SEO.description %>" />
+<meta name="image" content="<%= GagaWeb.SEO.image %>" />
+
+<%# OpenGraph tags %>
+<meta property="og:title" content="<%= GagaWeb.SEO.title %>" />
+<meta property="og:description" content="<%= GagaWeb.SEO.description %>" />
+<meta property="og:url" content="<%= GagaWeb.SEO.url %>" />
+<meta property="og:locale" content="<%= GagaWeb.SEO.locale %>" />
+<meta property="og:image" content="<%= GagaWeb.SEO.image %>" />
+<meta property="og:type" content="<%= GagaWeb.SEO.type %>" />
+<meta property="og:site_name" content="<%= GagaWeb.SEO.site_name %>" />
+
+<%# Twitter Card tags %>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="<%= GagaWeb.SEO.twitter_user %>" />
+<meta name="twitter:creator" content="<%= GagaWeb.SEO.twitter_user %>" />
+<meta name="twitter:image" content="<%= GagaWeb.SEO.image %>" />
