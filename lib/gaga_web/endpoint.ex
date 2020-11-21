@@ -7,7 +7,8 @@ defmodule GagaWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_gaga_key",
-    signing_salt: "G43rOH1s"
+    signing_salt: {GagaWeb.Endpoint, :config, [:signing_salt]},
+    encryption_salt: {GagaWeb.Endpoint, :config, [:encryption_salt]}
   ]
 
   socket "/socket", GagaWeb.UserSocket,

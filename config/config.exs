@@ -11,6 +11,8 @@ use Mix.Config
 config :gaga, GagaWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "cVTPf6Fk2McmjwNyVD16FXqE2or8078pk3zmhKCBQIADHP/uzSmC68+g2XimPAs7",
+  encryption_salt: "G43rOH1s",
+  signing_salt: "K6DnElJu",
   render_errors: [view: GagaWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Gaga.PubSub,
   live_view: [signing_salt: "hmmA8j8U"]
