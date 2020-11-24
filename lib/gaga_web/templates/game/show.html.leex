@@ -15,19 +15,19 @@
       <label class="label">Your vote:</label>
       <div class="deck">
         <%= for card <- deck() do %>
-          <a
+          <button
             class="card button <%= if @current_vote == card do %>button-outline<% end %>"
             phx-click="vote"
             phx-value-vote="<%= card %>">
             <strong><%= card %></strong>
-          </a>
+          </button>
         <% end %>
       </div>
       <div class="deck-actions">
-        <a class="button" phx-click="new_round">
+        <button class="button" phx-click="new_round">
           New Round
         </a>
-        <a class="button" phx-click="flip_cards" <%= display_votes?(assigns) && "disabled" %>>
+        <button class="button" phx-click="flip_cards" <%= display_votes?(assigns) && "disabled" %>>
           Flip cards
         </a>
       </div>
