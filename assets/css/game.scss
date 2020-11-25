@@ -16,6 +16,18 @@
   white-space: nowrap;
 }
 
+a.copy-url-to-clipboard {
+  &:after {
+    content: ' 📋';
+  }
+  &.copied:after {
+    content: ' ✅';
+  }
+  &.failed-copy:after {
+    content: ' ❌';
+  }
+}
+
 .deck {
   display: flex;
   align-items: center;

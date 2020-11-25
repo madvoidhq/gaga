@@ -33,3 +33,16 @@ liveSocket.connect()
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket
 
+
+for (const element of document.querySelectorAll("a.copy-url-to-clipboard")) {
+	const data = element.href
+	element.addEventListener('click', (e) => {
+		e.stopPropagation()
+		e.preventDefault()
+		navigator.clipboard.writeText(data).then(() => {
+			element.classList.add('copied')
+		}).catch(() => {
+			element.classList.add('failed-copy')
+		})
+	})
+}
