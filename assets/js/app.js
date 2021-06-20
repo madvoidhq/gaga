@@ -17,6 +17,8 @@ import {Socket} from "phoenix"
 import NProgress from "nprogress"
 import {LiveSocket} from "phoenix_live_view"
 
+import "./clipboard_copy_element"
+
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 let liveSocket = new LiveSocket("/live", Socket, {params: {_csrf_token: csrfToken}})
 
@@ -32,17 +34,3 @@ liveSocket.connect()
 // >> liveSocket.enableLatencySim(1000)  // enabled for duration of browser session
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket
-
-
-for (const element of document.querySelectorAll("a.copy-url-to-clipboard")) {
-	const data = element.href
-	element.addEventListener('click', (e) => {
-		e.stopPropagation()
-		e.preventDefault()
-		navigator.clipboard.writeText(data).then(() => {
-			element.classList.add('copied')
-		}).catch(() => {
-			element.classList.add('failed-copy')
-		})
-	})
-}
