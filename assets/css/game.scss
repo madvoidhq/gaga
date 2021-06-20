@@ -2,6 +2,27 @@
   margin-bottom: 3rem;
 }
 
+.game-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin-bottom: 2.5rem;
+
+  flex-direction: row;
+
+  flex-wrap: nowrap;
+  gap: 4px;
+}
+
+.copy-btn {
+  cursor: pointer;
+
+  vertical-align: middle;
+
+  user-select: none;
+}
+
 .game-name {
   // position: relative;
   display: inline-block;
@@ -14,6 +35,20 @@
 
   font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
   white-space: nowrap;
+}
+
+.icon {
+  display: inline-block;
+
+  overflow: visible !important;
+
+  fill: currentColor;
+
+  vertical-align: text-bottom;
+}
+
+.color-icon-success {
+  color: #56d364;
 }
 
 .deck {
