@@ -1,18 +1,18 @@
-ARG ALPINE_VERSION=3.9
+ARG ALPINE_VERSION=3.14
 
-FROM alpine:${ALPINE_VERSION} AS alpine
-
-FROM elixir:1.9.0-alpine AS builder
+# Stage 1
+# Build the release
+FROM elixir:1.11.4-alpine AS builder
 
 # set build ENV
 ENV MIX_ENV=prod
 
 # install build dependencies
 RUN apk add --no-cache \
-    build-base \
-    git \
-    npm \
-    python \
+    # https://pkgs.alpinelinux.org/packages?name=build-base (or apk info -R build-base)
+    # => binutils file fortify-headers g++ gcc libc-dev patch (remake-)make
+    build-base git \
+    nodejs npm \
     && rm -rf /tmp/* /var/cache/apk/*
 
 # prepare build dir
@@ -42,8 +42,9 @@ COPY lib ./lib/
 # COPY rel rel
 RUN mix do compile, release
 
-# prepare release image
-FROM alpine AS app
+# Stage 2
+# Prepare the minimal runtime environment and copies over the release.
+FROM alpine:${ALPINE_VERSION} as app
 
 LABEL maintainer="Jean-Paul Bonnetouche" \
     org.opencontainers.image.vendor="Madvoid" \
